@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
-  
+
+
   resources :profiles, only: [:edit, :update]
   resources :comentarios
   resources :procesos
   devise_for :users
-  
+
   authenticated :user do
     root 'procesos#index'
   end
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get 'menu/cambios_aprobados'
   get 'menu/estadisticas'
   get 'menu/contribuidores'
-  
+  get 'menu/procesos_pendientes', to: 'menu#cambios_aprobados' 
+
   resources :posts do
   	resources :comments
   end
