@@ -6,6 +6,7 @@ class MenuController < ApplicationController
   end
 
   def cambios_aprobados
+    @procesos = Proceso.all
   end
 
   def estadisticas
