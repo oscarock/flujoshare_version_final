@@ -6,9 +6,9 @@
    <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>-->
    <%= notice %>
 <!--</p>-->
-
+<br>
 <h1>Procesos</h1>
-
+<br>
 <table class="table">
   <thead>
     <tr>
@@ -26,7 +26,11 @@
       <tr>
         <td><%= proceso.nombre %></td>
         <td><%= proceso.commits %></td>
-        <td><%= proceso.status %></td>
+        <td>
+          <button type="button" class="btn <% if proceso.status == 'Pendiente' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  aria-haspopup="true" aria-expanded="false" disabled>
+            <%= proceso.status %>
+          </button>
+        </td>
         <td><%= proceso.contribuidores %></td>
         <td><%= proceso.version %></td>
         <td><%= link_to 'Show', proceso, class: "btn btn-outline-primary" %></td>
@@ -40,4 +44,3 @@
 <br>
 
 <%= link_to 'New Proceso', new_proceso_path, class: "btn btn-primary" %>
-
