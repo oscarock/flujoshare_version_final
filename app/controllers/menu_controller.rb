@@ -9,6 +9,17 @@ class MenuController < ApplicationController
     @procesos = Proceso.all
   end
 
+  def cambio_estado_proceso
+    proceso = Proceso.find(params[:id])
+    if params[:valor] == "Aceptado"
+      proceso.update_attributes(status: "Aceptado")
+    else
+      proceso.update_attributes(status: "Rechazado")
+    end
+
+    redirect_to menu_procesos_pendientes_path
+  end
+
   def estadisticas
   end
 
