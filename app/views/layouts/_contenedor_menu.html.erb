@@ -1,19 +1,24 @@
 <nav class="navbar navbar-light">
-    
+
     <li class="nav-item">
-        <a><%= link_to "Diagramas de flujo", procesos_path, class: "p-2 text-muted" %></a>    
+        <a><%= link_to "Diagramas de flujo", procesos_path, class: "p-2 text-muted" %></a>
     </li>
+    <% if current_user.role == "admin" %>
+      <li class="nav-item">
+          <a><%= link_to "Procesos Pendientes", menu_procesos_pendientes_path, class: "p-2 text-muted" %></a>    
+      </li>
+    <% end %>
     <li class="nav-item">
         <a><%= link_to "Comentarios", posts_path, class: "p-2 text-muted" %></a>
     </li>
     <li class="nav-item">
-        <a><%= link_to "Cambios aprobados", menu_cambios_aprobados_path, class: "p-2 text-muted" %></a>    
+        <a><%= link_to "Cambios aprobados", menu_cambios_aprobados_path, class: "p-2 text-muted" %></a>
     </li>
     <li class="nav-item">
-        <a><%= link_to "Estadisticas", menu_estadisticas_path, class: "p-2 text-muted" %></a>   
+        <a><%= link_to "Estadisticas", menu_estadisticas_path, class: "p-2 text-muted" %></a>
     </li>
     <li class="nav-item">
-        <a><%= link_to "Contribuidores", menu_contribuidores_path, class: "p-2 text-muted" %></a>    
+        <a><%= link_to "Contribuidores", menu_contribuidores_path, class: "p-2 text-muted" %></a>
     </li>
 </nav>
 
@@ -31,4 +36,3 @@
             <% end %>
         </ul>
     </div>
-
