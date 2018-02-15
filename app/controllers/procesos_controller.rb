@@ -60,7 +60,7 @@ class ProcesosController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_proceso
@@ -69,6 +69,6 @@ class ProcesosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proceso_params
-      params.require(:proceso).permit(:nombre, :commits, :status, :contribuidores, :version)
+      params.require(:proceso).permit(:nombre, :commits, :contribuidores, :version).merge(status: 'Pendiente')
     end
 end
