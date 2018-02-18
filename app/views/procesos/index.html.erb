@@ -27,7 +27,7 @@
         <td><%= proceso.nombre %></td>
         <td><%= proceso.commits %></td>
         <td>
-          <button type="button" class="btn <% if proceso.status == 'Pendiente' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  aria-haspopup="true" aria-expanded="false" disabled>
+          <button type="button" class="btn <% if proceso.status == 'Solicitud de Aprobacion' %> btn-outline-warning <% elsif proceso.status == 'Rechazado' %> btn-outline-danger <% else %> btn-outline-success <% end %>"  aria-haspopup="true" aria-expanded="false" disabled>
             <%= proceso.status %>
           </button>
         </td>
