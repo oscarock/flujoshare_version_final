@@ -69,6 +69,6 @@ class ProcesosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proceso_params
-      params.require(:proceso).permit(:nombre, :commits, :contribuidores, :version).merge(status: 'Pendiente')
+      params.require(:proceso).permit(:nombre, :commits, :status, :contribuidores, :version)
     end
 end
