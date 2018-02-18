@@ -5,7 +5,7 @@ class MenuController < ApplicationController
   def comentarios
   end
 
-  def cambios_aprobados
+  def procesos_pendientes
     @procesos = Proceso.where(status: 'Solicitud de Aprobacion')
   end
 
