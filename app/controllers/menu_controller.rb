@@ -20,6 +20,10 @@ class MenuController < ApplicationController
     redirect_to menu_procesos_pendientes_path
   end
 
+  def cambios_aprobados
+    @procesos = Proceso.where(status: 'Aceptado')
+  end
+
   def estadisticas
   end
 
