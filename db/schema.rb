@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220181539) do
+ActiveRecord::Schema.define(version: 20180221183847) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string "idUsuario"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180220181539) do
     t.integer "proceso_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_edit"
     t.index ["proceso_id"], name: "index_records_on_proceso_id"
   end
 
