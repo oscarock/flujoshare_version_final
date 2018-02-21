@@ -10,7 +10,7 @@
       <th>Status</th>
       <th>Contribuidores</th>
       <th>Version</th>
-      <th>Creado Por</th>
+      <th>Editado Por</th>
       <th>Fecha Creado</th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
         </td>
         <td><%= record.proceso.contribuidores %></td>
         <td><%= record.proceso.version %></td>
-        <td><%= record.proceso.user.email %></td>
+        <td><%= record.user_edit %></td>
         <td><%= record.proceso.created_at %></td>
       <% end %>
       </tr>
